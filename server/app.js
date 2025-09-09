@@ -51,8 +51,12 @@ app.use(cors({
 }));
 
 // Importing routes..
+import shipmentRouter from "./routes/shipments.route.js";
+import flightRouter from "./routes/flight.routes.js";
 
 // API routes..
+app.use("/shipments", shipmentRouter);
+app.use("/flights", flightRouter);
 
 // 404 Not Found handler..
 app.use((req, res) => {
